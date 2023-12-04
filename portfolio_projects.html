@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Portfolio</title>
+    <style>
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+
+            .box {
+                margin: 20px;
+            }
+
+            .navbar a {
+                font-size: 14px;
+            }
+
+            .rounded-box {
+                width: 100%;
+                padding: 20px;
+                margin: 0;
+            }
+        }
+
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: aliceblue;
+            background-color: #36415a;
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            border: 2px solid #ff00aa;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ff00aa;
+            color: black;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .rounded-box {
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+            width: 80%;
+            max-width: 500px;
+            background-color: rgb(106, 106, 121);
+            border-radius: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            box-sizing: border-box;
+        }
+
+        .me {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 50%;
+        }
+
+        h4 {
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .projects {
+            margin-top: 20px;
+        }
+
+        .projects h2 {
+            text-align: center;
+        }
+
+        .project {
+            margin: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .project img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        .project a {
+            color: #ff00aa;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .project a:hover {
+            text-decoration: underline;
+        }
+
+        .contact {
+            margin-top: 20px;
+        }
+
+        .contact h2 {
+            text-align: center;
+        }
+
+        .contact p {
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="navbar">
+            <a href="portfolio_home.html">Home</a>
+            <a href="portfolio_about_me.html">About Me</a>
+            <a href="portfolio_projects.html">Projects</a>
+            <a href="portfolio_contact.html">Contact</a>
+        </div>
+
+        <div class="projects">
+            <h2>Projects</h2>
+            <div class="project">
+                <img src="project1_image.jpg" alt="Project 1 Image">
+                <h3>Project 1: Swan's Hardware</h3>
+                <p>A complete workup of all the design needed for an imaginary business. Click <a href="#Project1">here</a> to view more details.</p>
+            </div>
+            <div class="project">
+                <img src="project2_image.jpg" alt="Project 2 Image">
+                <h3>Project 2: Art Show Poster</h3>
+                <p>A poster for NIC's high school art show. Click <a href="#Project2">here</a> to view more details.</p>
+            </div>
+        </div>
+        <footer>Copyright Isabella Pelot 11-15-2023</footer>
+    </div>
+</body>
+
+</html>
+

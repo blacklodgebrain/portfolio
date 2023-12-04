@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Portfolio</title>
+    <style>
+        @media only screen and (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+
+            .box {
+                margin: 20px;
+            }
+
+            .navbar a {
+                font-size: 14px;
+            }
+
+            .rounded-box {
+                width: 100%;
+                padding: 20px;
+                margin: 0;
+            }
+        }
+
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: aliceblue;
+            background-color: #36415a;
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            border: 2px solid #ff00aa;
+        }
+
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
+            margin-bottom: 20px; /* Add margin to separate from content */
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ff00aa;
+            color: black;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .rounded-box {
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+            width: 80%;
+            max-width: 500px;
+            background-color: rgb(106, 106, 121);
+            border-radius: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            box-sizing: border-box;
+        }
+
+        .me {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 50%;
+        }
+
+        h4 {
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .interests {
+            margin-top: 20px;
+        }
+
+        .interests h2 {
+            text-align: center;
+        }
+
+        .interests ul {
+            display: flex;
+            justify-content: space-around;
+            margin: 0;
+            padding: 0;
+        }
+
+        .interests li {
+            flex: 1;
+            margin: 0 10px;
+            background-color: #6a6a79;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="navbar">
+            <a href="portfolio_home.html#Home">Home</a>
+            <a href="portfolio_about_me.html#AboutMe">About Me</a>
+            <a href="portfolio_Projects.html#Projects">Projects</a>
+            <a href="portfolio_Contact.html#ContactMe">Contact</a>
+        </div>
+
+        <h1>About Me</h1>
+
+        <p>
+            Hi there! My name is Isabella Pelot, and I'm passionate about graphic design. My journey into the world of graphic design started when I first learned about it at the age 11.
+        </p>
+
+        <p>
+            In 2021, I made a significant move from Atlanta, Georgia, to North Idaho. This transition marked my entrance into public school after being homeschooled for most of my life. It was during this time that I discovered North Idaho College's graphic design program, thanks to the guidance of my counselor.
+        </p>
+
+        <p>
+            Currently, I'm enrolled in North Idaho College's graphic design program, where I'm eager to expand my knowledge and skills in the field. To me, design is more than just a profession—it's a creative journey that I'm excited to explore further.
+        </p>
+
+        <div class="rounded-box">
+            <img src="image_me.png" alt="Photograph of me." class="me">
+        </div>
+
+        <footer><small>Copyright Isabella Pelot 11-15-2023</small></footer>
+    </div>
+</body>
+
+</html>
+
