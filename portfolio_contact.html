@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="me_logo_IP.png" type="image/png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,11 +28,6 @@
                 margin: 0;
             }
         }
-        
-        h1 {
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-        }
 
         body {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -49,6 +45,7 @@
             margin: 0;
             padding: 20px;
             border: 2px solid #ff00aa;
+            position: relative; 
         }
 
         .rounded-box {
@@ -98,12 +95,23 @@
             color: black;
         }
 
-
+        /* Add this style for the logo */
+        .logo {
+            max-width: 50px;
+            max-height: 50px;
+            margin: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
     </style>
 </head>
 
 <body>
     <div class="box">
+        <!-- Display the logo -->
+        <img src="me_logo_IP.png" alt="Logo" class="logo">
+
         <div class="navbar">
             <a href="index.html#Home">Home</a>
             <a href="portfolio_about_me.html#AboutMe">About Me</a>
@@ -124,12 +132,8 @@
         </div>
         <p>Email me at isabellapelot.design@gmail.com, or check out my LinkedIn profile at Isabella Pelot and my Github at blacklodgebrain.</p>
 
-        <footer>Copyright© Isabella Pelot 2023</footer>
+        <footer><small>Copyright© Isabella Pelot 2023</small></footer>
     </div>
 </body>
 
 </html>
-
-
-
-

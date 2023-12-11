@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <link rel="icon" href="me_logo_IP.png" type="image/png">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,6 +45,7 @@
             margin: 0;
             padding: 20px;
             border: 2px solid #ff00aa;
+            position: relative; /* Added position relative for logo positioning */
         }
 
         .navbar {
@@ -156,11 +158,24 @@
             max-height: 100%;
             border-radius: 50%;
         }
+
+        /* Add this style for the logo */
+        .logo {
+            max-width: 50px;
+            max-height: 50px;
+            margin: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
     </style>
 </head>
 
 <body>
     <div class="box">
+        <!-- Display the logo -->
+        <img src="me_logo_IP.png" alt="Logo" class="logo">
+
         <div class="navbar">
             <a href="index.html">Home</a>
             <a href="portfolio_about_me.html">About Me</a>
@@ -175,14 +190,14 @@
                 <h3>Project 1: Swan's Hardware</h3>
                 <p>A complete workup of all the design needed for an imaginary business. Click <a href="./GDES_102_FALL2023_SWANS_HARDWARE_ISABELLA_PELOT.pdf" target="_blank">here</a> to view more details.</p>
                 <img src="swan's.png" alt="Swan's logo">
-        </div>
-        <div class="project">
+            </div>
+            <div class="project">
                 <h3>Project 2: Art Show Poster</h3>
                 <p>A poster for NIC's high school art show.</p>
                 <img src="Art_Show_Poster.png" alt="Art Show Poster">
-        </div>
-        
-        <h2>Illustrations</h2>
+            </div>
+            
+            <h2>Illustrations</h2>
             <div class="project">
                 <img src="Flower_Ladies.png" alt="Flower Ladies." class="illustrations">
             </div>
@@ -191,7 +206,7 @@
             </div>
                 
         </div>
-        <footer>Copyright© Isabella Pelot 2023</footer>
+        <footer><small>Copyright© Isabella Pelot 2023</small></footer>
     </div>
 </body>
 
