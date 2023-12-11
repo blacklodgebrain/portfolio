@@ -48,7 +48,7 @@
             position: relative; /* Added position relative for logo positioning */
         }
 
-                .navbar {
+        .navbar {
             background-color: rgb(106, 106, 121);
             overflow: hidden;
             margin-bottom: 20px;
@@ -168,13 +168,15 @@
             position: absolute;
             top: 0;
             left: 0;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
     <div class="box">
-        <img src="me_logo_IP.png" alt="Logo" class="logo">
+        <!-- Display the logo -->
+        <img src="me_logo_IP.png" alt="Logo" class="logo" onclick="spinLogo()">
 
         <div class="navbar">
             <a href="index.html">Home</a>
@@ -262,6 +264,20 @@
         </div>
         <footer><small>Copyright© Isabella Pelot 2023</small></footer>
     </div>
+
+    <script>
+        function spinLogo() {
+            var logo = document.querySelector('.logo');
+            logo.style.transition = 'transform 1s ease-in-out';
+            logo.style.transform = 'rotate(360deg)';
+            setTimeout(function () {
+                logo.style.transition = 'none';
+                logo.style.transform = 'none';
+            }, 1000);
+        }
+    </script>
 </body>
 
 </html>
+
+
