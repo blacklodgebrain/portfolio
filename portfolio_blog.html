@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="i_p_logo_white.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Portfolio</title>
+    <style>
+        @media only screen and (max-width: 600px) {
+        }
+
+        body {
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            color: rgb(255, 255, 255);
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 20px;
+            border: 2px solid #ff00aa;
+            position: relative;
+        }
+
+        .navbar {
+            background-color: rgb(0, 0, 0);
+            overflow: hidden;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            position: relative; 
+        }
+
+        .navbar a:hover {
+            background-color: #ff00aa;
+            color: black;
+        }
+
+        .navbar a:last-child {
+            float: right;
+        }
+
+        .rounded-box {
+            display: flex;
+            flex-direction: column;
+            padding: 50px;
+            width: 80%;
+            max-width: 500px;
+            /*background-color: rgb(255, 255, 255);*/
+            border-radius: 20px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            box-sizing: border-box;
+        }
+
+        .posts{
+            background-color: rgb(0, 0, 0);
+            overflow: hidden;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+
+        .posts a {
+            float: left;
+            display: block;
+            color: #ffffff;
+            text-align: left;
+            padding: 14px 16px;
+            text-decoration: none;
+            position: relative; 
+        }
+
+        .posts a:hover {
+            background-color: #ff00aa;
+            color: black;
+        }
+
+        .posts a:last-child {
+            float: left;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .logo {
+            max-width: 100px;
+            max-height: 100px;
+            margin: 10px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            z-index: 1; 
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <img src="i_p_logo_white.png" alt="Logo" class="logo" onclick="spinLogo()">
+
+        <div class="navbar">
+            <a href="index.html#Home">Home</a>
+            <a href="portfolio_about_me.html#AboutMe">About Me</a>
+            <a href="portfolio_projects.html#Projects">Projects</a>
+            <a href="portfolio_contact.html#ContactMe">Contact</a>
+            <a href="portfolio_blog_vanilla.html" style="float: right;">Blog</a>
+        </div>
+
+        <div class="posts">
+            <a href="portfolio_blog_vanilla.html" style="float: right;">Vannilla JS vs React JS</a>
+        </div>
+
+        <footer><small>Copyright© Isabella Pelot 2024</small></footer>
+    </div>
+
+    <script>
+        function spinLogo() {
+            var logo = document.querySelector('.logo');
+            logo.style.transition = 'transform 1s ease-in-out';
+            logo.style.transform = 'rotate(360deg)';
+            setTimeout(function () {
+                logo.style.transition = 'none';
+                logo.style.transform = 'none';
+            }, 1000);
+        }
+    </script>
+</body>
+
+</html>
+
+
+
+
