@@ -53,8 +53,28 @@
             color: black;
         }
 
-        .navbar a:last-child {
+        .hamburger {
+            display: none;
             float: right;
+            padding: 14px 16px;
+            cursor: pointer;
+            color: white;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .navbar.responsive .hamburger {
+                display: block;
+            }
+
+            .navbar.responsive a:not(.hamburger) {
+                display: none;
+            }
+
+            .navbar a {
+                float: none;
+                display: block;
+                text-align: center;
+            }
         }
 
         .rounded-box {
@@ -119,12 +139,15 @@
     <div class="box">
         <img src="i_p_logo_white.png" alt="Logo" class="logo" onclick="spinLogo()">
 
-        <div class="navbar">
+        <div class="navbar" id="navbar">
             <a href="index.html#Home">Home</a>
             <a href="portfolio_about_me.html#AboutMe">About Me</a>
             <a href="portfolio_projects.html#Projects">Projects</a>
             <a href="portfolio_contact.html#ContactMe">Contact</a>
-            <a href="portfolio_blog_vanilla.html" style="float: right;">Blog</a>
+            <a href="portfolio_blog.html#Blog">Blog</a>
+            <a href="javascript:void(0);" class="hamburger" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </a>
         </div>
 
         <div class="posts">
@@ -143,6 +166,15 @@
                 logo.style.transition = 'none';
                 logo.style.transform = 'none';
             }, 1000);
+        }
+
+        function toggleMenu() {
+            var x = document.getElementById("navbar");
+            if (x.className === "navbar") {
+                x.className += " responsive";
+            } else {
+                x.className = "navbar";
+            }
         }
     </script>
 </body>
