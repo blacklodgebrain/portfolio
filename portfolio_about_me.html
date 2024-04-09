@@ -1,200 +1,388 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="icon" href="i_p_logo_white.png" type="image/png">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <title>Portfolio</title>
+    <title>Your Page Title</title>
+    <meta name="description" content="A brief description of your page">
     <style>
-        body {
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            color: rgb(255, 255, 255);
-            background-color: #000000;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: CAVIAR DREAMS;
+        line-height: 1.6;
+        color: aliceblue;
+        background-color: #000000;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        justify-content: flex-end; 
+    }
+    
+    .navbar {
+        display: flex;
+        align-items: center;
+        font-family: Caviar Dreams;
+        font-style: normal;
+        font-weight: 500;
+    }
+    
+    .navbar a {
+        color: aliceblue;
+        text-decoration: none;
+        padding: 14px 16px;
+    }
 
-        .box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-            padding: 20px;
-            border: 2px solid #ff00aa;
-            position: relative;
-        }
-
+    .mobile-navbar {
+        display: none;
+    }
+    
+    .hamburger-menu {
+        display: none;
+        float: right;
+        cursor: pointer;
+    }
+    
+    @media only screen and (max-width: 600px) {
         .navbar {
-            background-color: rgb(0, 0, 0);
-            overflow: hidden;
-            margin-bottom: 20px;
-            border-radius: 10px;
+            justify-content: flex-end;
         }
-
+    
         .navbar a {
-            float: left;
-            display: block;
-            color: #ffffff;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
+            display: none; 
         }
-
-        .navbar a:hover {
-            background-color: #ff00aa;
-            color: rgb(255, 255, 255);
+    
+        .hamburger-menu {
+            display: block; 
         }
-
-        .hamburger {
-            display: none;
-            float: right;
-            padding: 14px 16px;
-            cursor: pointer;
-            color: white;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .navbar.responsive .hamburger {
-                display: block;
-            }
-
-            .navbar.responsive a:not(.hamburger) {
-                display: none;
-            }
-
-            .navbar a {
-                float: none;
-                display: block;
-                text-align: center;
-            }
-        }
-
-        @media only screen and (min-width: 601px) {
-            .navbar .hamburger {
-                display: none;
-            }
-        }
-
-        h1 {
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .rounded-box {
-            display: flex;
-            flex-direction: column;
-            padding: 50px;
-            width: 80%;
-            max-width: 500px;
-            /*background-color: rgb(255, 255, 255);*/
-            border-radius: 20px;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-            box-sizing: border-box;
-        }
-
-        .me {
-            max-width: 100%;
-            max-height: 100%;
-            border-radius: 50%;
-        }
-
-        h4 {
-            text-align: center;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-            text-align: left;
-        }
-
-        .interests {
-            margin-top: 20px;
-        }
-
-        .interests h2 {
-            text-align: center;
-        }
-
-        .interests ul {
-            display: flex;
-            justify-content: space-around;
-            margin: 0;
-            padding: 0;
-        }
-
-        .interests li {
-            flex: 1;
-            margin: 0 10px;
-            background-color: #6a6a79;
-            color: #fff;
-            text-align: center;
-            padding: 10px;
-            border-radius: 10px;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-
-        .logo {
-            max-width: 1z00px;
-            max-height: 100px;
-            margin: 10px;
+    
+        .mobile-navbar.open {
+            display: block; 
+            flex-direction: column; 
             position: absolute;
             top: 0;
-            left: 0;
-            cursor: pointer;
+            right: 0;
+            background-color: #3b384f;
+            width: 50%;
+            height: 100vh;
+            transition: all 0.3s ease;
+            font-family: kohinoor-bangla, sans-serif;
+            font-weight: 300;
         }
 
-    </style>
-</head>
+        .mobile-navbar.open a[href="index.html#Home"] {
+            margin-top: 50px; 
+        }
 
+
+        .close-btn {
+            background-color: white;
+            color: #3b384f;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 2;
+        }
+
+
+        .mobile-navbar a {
+            display: block;
+            color: aliceblue;
+            padding: 10px 30px;
+            text-decoration: none;
+        }
+    }
+    
+    @media only screen and (min-width: 601px) {
+        .navbar .hamburger {
+            display: none; 
+        }
+    }
+    
+    
+    main {
+        display: flex;
+        justify-content: space-between; 
+        text-decoration-color: #363E47;
+        padding: 75px;
+    }
+
+    @media only screen and (min-width: 1500px) {
+    main {
+        width: 100%; 
+        max-width: 1500px; 
+        margin: 0 auto; 
+    }
+}
+
+    
+    h1 {
+        font-family: Orbitron;
+        font-size: 75px;
+        max-width: 100%; 
+        flex-direction: row;
+    }
+    
+    h2 {
+        font-family: Orbitron;
+        color: rgb(0, 0, 0);
+        font-size: 25px;
+        max-width: 100%;
+    }
+    
+    .text-box {
+        color: #000000;
+    }
+    
+    @media only screen and (max-width: 1000px) {
+        h1 {
+            font-size: 36px; 
+        }
+    }
+    
+    .content {
+        flex: 1;
+        padding: 0 20px;
+        margin-top: 100px;
+    }
+
+    .content p {
+        text-align: left;
+    }
+    
+    .photo_me {
+        width: 275px; 
+        max-width: 100%; 
+        border-radius: 50%;
+        margin-left: auto;
+    }
+    
+    @media only screen and (max-width: 1000px) {
+        .content {
+            margin-top: 20px; 
+        }
+    }
+    
+    .circle {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #EEF2F4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    
+    .circle button {
+        background-color: transparent;
+        border: none;
+        color: #333;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    @media only screen and (min-width: none) {
+        .second-section, .third-section, .fourth-section {
+            width: 100%; 
+            max-width: 100%; 
+            margin: 0 auto; 
+        }
+    }
+    .second-section, .fourth-section {
+        background-color: aliceblue; 
+        padding: 150px;
+        margin-top: 20px;
+        justify-content: center;
+        text-decoration-color: #000000;
+    }
+    
+    .enim {
+        justify-content: center;
+        align-items: center;
+        text-align: center;                                         
+    }
+    
+    .gallery-container {
+        order: 1; 
+        margin-top: 20px;  
+    }
+    
+    .circle-row {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px; 
+    }
+    
+    .circle-container {
+        text-align: center; 
+        padding: 20px;
+    }
+
+    .second-text, .fourth-text {
+        margin-top: 10px; 
+        text-align: center;
+        color: black; 
+    }
+
+    .third-section {
+        background-color: rgb(0, 0, 0); 
+        padding: 150px;
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    .third-text {
+        margin-top: 10px; 
+        text-align: center;
+        color: aliceblue; 
+    }
+    
+    @media screen and (max-width: 600px) {
+        main {
+            flex-direction: column; 
+        }
+    }
+    
+    @media screen and (max-width: 600px) {
+        .gallery-item {
+            width: 150px; 
+            height: 150px; 
+        }
+    }
+    
+    @media screen and (max-width: 600px) {
+        body {
+            padding: 10px;
+        }
+    
+        header, nav, main, footer {
+            padding: 10px;
+        }
+    }
+    
+    footer {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .logo {
+        max-width: 50px;
+        max-height: 50px;
+        margin: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        z-index: 1; 
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .logo {
+            max-width: 50px; 
+            max-height: 50px; 
+            margin: 5px; 
+        }
+    }
+
+</style>
+    
+</head>
 <body>
-    <div class="box">
-        <img src="i_p_logo_white.png" alt="Logo" class="logo" onclick="spinLogo()">
+    <header>
+
+        <div class="box">
+        <img src="white_logo.png" alt="Logo" class="logo" onclick="spinLogo()">
 
         <div class="navbar" id="navbar">
             <a href="index.html#Home">Home</a>
-            <a href="portfolio_about_me.html#AboutMe">About Me</a>
-            <a href="portfolio_projects.html#Projects">Projects</a>
-            <a href="portfolio_contact.html#ContactMe">Contact</a>
-            <a href="portfolio_blog.html#Blog">Blog</a>
-            <a href="javascript:void(0);" class="hamburger" onclick="toggleMenu()">
-                <i class="fa fa-bars"></i>
-            </a>
+            <a href="about_me.html#AboutMe">About Me</a>
+            <a href="projects.html#Projects">Projects</a>
+            <a href="contact.html">Contact</a>
+
+        </div>
+        <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
+        <div class="mobile-navbar" id="mobile-navbar">
+            <button id="mobile-navbar-close" class="close-btn">X</button>
+            <a href="index.html#Home">Home</a>
+            <a href="about_me.html#AboutMe">About Me</a>
+            <a href="projects.html#Projects">Projects</a>
+            <a href="contact.html#ContactMe">Contact</a>
+
+        </div>
+    </nav>
+    </header>    
+    
+    <main>
+
+        <div class="content">
+            <h1>About Me</h1>
+            <p>
+                Hi there! My name is Isabella Pelot, I am an aspiring graphic designer. This summer, my focus is on working and saving for the upcoming college semester while also aiming to secure an internship. I'm dedicated to building a strong foundation for my academic journey and gaining valuable real-world experience to support my career goals.
+            </p>
         </div>
 
-        <h1>About Me</h1>
-
-        <p>
-            Hi there! My name is Isabella Pelot, and I'm passionate about graphic design. My journey into the world of graphic design started when I first learned about it at the age 11.
-        </p>
-
-        <p>
-            In 2021, I made a significant move from Atlanta, Georgia, to North Idaho. This transition marked my entrance into public school after being homeschooled for most of my life. It was during this time that I discovered North Idaho College's graphic design program, thanks to the guidance of my counselor.
-        </p>
-
-        <p>
-            Currently, I'm enrolled in North Idaho College's graphic design program, where I'm eager to expand my knowledge and skills in the field. To me, design is more than just a profession—it's a creative journey that I'm excited to explore further.
-        </p>
-
-        <div class="rounded-box">
-            <img src="image_me.png" alt="Photograph of me." class="me">
+        <div class="gallery-container">
+            <img src="image_me.png" alt="Photo of Me" class="photo_me">
         </div>
+        
+    </main>
+    
+    <main class="second-section">
+        <div class="second-text">
+            <p>
+                At the age of 11, my fascination with art sparked my journey into graphic design. Drawing inspiration from my love for creativity and expression, I embarked on a path to explore the world of design. 
+            </p>
+        </div>
+    </main>     
 
-        <footer><small>Copyright© Isabella Pelot 2023</small></footer>
-    </div>
+    <main class="third-section">
+        <div class="third-text">
+            <p>
+                In 2021, I made a significant move from Atlanta, Georgia, to North Idaho. This transition marked my entrance into public school after being homeschooled for most of my life. It was during this time that I discovered North Idaho College's graphic design program, thanks to the guidance of my counselor.
+            </p>
+        </div>
+    </main>   
 
-    <script>
+    <main class="fourth-section">
+        <div class="fourth-text">
+            <p>
+                Currently, I'm enrolled in North Idaho College's graphic design program, where I'm eager to expand my knowledge and skills in the field. To me, design is more than just a profession—it's a creative journey that I'm excited to explore further.
+            </p>
+        </div>
+    </main>   
+
+    <footer>
+        Copyright© Isabella Pelot 2024
+    </footer>
+</div>
+<script>
         function spinLogo() {
             var logo = document.querySelector('.logo');
             logo.style.transition = 'transform 1s ease-in-out';
@@ -205,15 +393,17 @@
             }, 1000);
         }
 
-        function toggleMenu() {
-            var x = document.getElementById("navbar");
-            if (x.className === "navbar") {
-                x.className += " responsive";
-            } else {
-                x.className = "navbar";
-            }
-        }
-    </script>
-</body>
+    var hamburger = document.getElementById('hamburger-menu');
+    var closeBtn = document.getElementById('mobile-navbar-close');
 
+    hamburger.addEventListener("click", toggleMenu);
+    closeBtn.addEventListener("click", toggleMenu);
+
+    function toggleMenu() {
+        var navbar = document.getElementById('mobile-navbar');
+        navbar.classList.toggle('open');
+    }
+</script>
+
+</body>
 </html>

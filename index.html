@@ -1,199 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="icon" href="i_p_logo_white.png" type="image/png">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <title>Portfolio</title>
+    <title>Your Page Title</title>
+    <meta name="description" content="A brief description of your page">
     <style>
-        body {
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-            color: rgb(255, 255, 255);
-            background-color: #000000;
-            margin: 0;
-            padding: 0;
-        }
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: CAVIAR DREAMS;
+        line-height: 1.6;
+        color: aliceblue;
+        background-color: #000000;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        justify-content: flex-end; 
+    }
+    
+    .navbar {
+        display: flex;
+        align-items: center;
+        font-family: Caviar Dreams;
+        font-style: normal;
+        font-weight: 500;
+    }
+    
+    .navbar a {
+        color: aliceblue;
+        text-decoration: none;
+        padding: 14px 16px;
+    }
 
-        .box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            margin: 0;
-            padding: 20px;
-            border: 2px solid #ff00aa;
-            position: relative;
-        }
-
+    .mobile-navbar {
+        display: none;
+    }
+    
+    .hamburger-menu {
+        display: none;
+        float: right;
+        cursor: pointer;
+    }
+    
+    @media only screen and (max-width: 600px) {
         .navbar {
-            background-color: rgb(0, 0, 0);
-            overflow: hidden;
-            margin-bottom: 20px;
-            border-radius: 10px;
+            justify-content: flex-end;
         }
-
+    
         .navbar a {
-            float: left;
-            display: block;
-            color: #ffffff;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            position: relative; 
+            display: none; 
         }
-
-        .navbar a:hover {
-            background-color: #ff00aa;
-            color: black;
+    
+        .hamburger-menu {
+            display: block; 
         }
-
-        .hamburger {
-            display: none;
-            float: right;
-            padding: 14px 16px;
-            cursor: pointer;
-            color: white;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .navbar.responsive .hamburger {
-                display: block;
-            }
-
-            .navbar.responsive a:not(.hamburger) {
-                display: none;
-            }
-
-            .navbar a {
-                float: none;
-                display: block;
-                text-align: center;
-            }
-        }
-
-        @media only screen and (min-width: 601px) {
-            .navbar .hamburger {
-                display: none;
-            }
-        }
-
-        h1 {
-            text-align: center;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        .rounded-box {
-            display: flex;
-            flex-direction: column;
-            padding: 50px;
-            width: 80%;
-            max-width: 500px;
-            /*background-color: rgb(255, 255, 255);*/
-            border-radius: 20px;
-            justify-content: center;
-            align-items: center;
-            margin-top: 20px;
-            box-sizing: border-box;
-        }
-
-        .me {
-            max-width: 500px;
-            max-height: 150%;
-            border-radius: 50%;
-        }
-
-        h4 {
-            text-align: center;
-        }
-
-        ul {
-            padding: 0;
-            text-align: left;
-        }
-
-        .interests {
-            margin-top: 20px;
-        }
-
-        .interests h2 {
-            text-align: center;
-        }
-
-        .interests ul {
-            list-style-type: none;
-            display: flex;
-            justify-content: space-around;
-            margin: 0;
-            padding: 0;
-        }
-
-        .interests li {
-            flex: 1;
-            margin: 0 10px;
-            background-color: #ffffff;
-            color: #000000;
-            text-align: center;
-            padding: 10px;
-            border-radius: 10px;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .logo {
-            max-width: 100px;
-            max-height: 100px;
-            margin: 10px;
+    
+        .mobile-navbar.open {
+            display: block; 
+            flex-direction: column; 
             position: absolute;
             top: 0;
-            left: 0;
-            cursor: pointer;
-            z-index: 1; 
+            right: 0;
+            background-color: #3b384f;
+            width: 50%;
+            height: 100vh;
+            transition: all 0.3s ease;
+            font-family: kohinoor-bangla, sans-serif;
+            font-weight: 300;
         }
 
-    </style>
-</head>
+        .mobile-navbar.open a[href="index.html#Home"] {
+            margin-top: 50px; 
+        }
 
+
+        .close-btn {
+            background-color: white;
+            color: #3b384f;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 2;
+        }
+
+
+        .mobile-navbar a {
+            display: block;
+            color: aliceblue;
+            padding: 10px 30px;
+            text-decoration: none;
+        }
+    }
+    
+    @media only screen and (min-width: 601px) {
+        .navbar .hamburger {
+            display: none; 
+        }
+    }
+    
+    
+    main {
+        display: flex;
+        justify-content: space-between; 
+        text-decoration-color: #363E47;
+        padding: 75px;
+    }
+
+    @media only screen and (min-width: 1500px) {
+    main {
+        width: 100%; 
+        max-width: 1500px; 
+        margin: 0 auto; 
+    }
+}
+
+    
+    h1 {
+        font-family: Orbitron;
+        font-size: 75px;
+        max-width: 100%; 
+    }
+    
+    h2 {
+        font-family: Orbitron;
+        color: rgb(0, 0, 0);
+        font-size: 25px;
+        max-width: 100%;
+    }
+    
+    .text-box {
+        color: #000000;
+    }
+    
+    @media only screen and (max-width: 1000px) {
+        h1 {
+            font-size: 36px; 
+        }
+    }
+    
+    .content {
+        flex: 1;
+        padding: 0 20px;
+        margin-top: 100px;
+    }
+    
+    .photo_me {
+        width: 275px; 
+        max-width: 100%; 
+        border-radius: 50%;
+        margin-right: 25%;
+    }
+    
+    @media only screen and (max-width: 1000px) {
+        .content {
+            margin-top: 20px; 
+        }
+    }
+    
+    .circle {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: #EEF2F4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    
+    .circle button {
+        background-color: transparent;
+        border: none;
+        color: #333;
+        font-size: 16px;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    @media only screen and (min-width: none) {
+        .new-section {
+            width: 100%; 
+            max-width: 100%; 
+            margin: 0 auto; 
+        }
+    }
+    .new-section {
+        background-color: #e0e6e9; 
+        padding: 150px;
+        margin-top: 20px;
+        justify-content: center;
+    }
+    
+    .enim {
+        justify-content: center;
+        align-items: center;
+        text-align: center;                                         
+    }
+    
+    .gallery-container {
+        order: 1; 
+        margin-top: 20px;  
+    }
+    
+    .circle-row {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px; 
+    }
+    
+    .circle-container {
+        text-align: center; 
+        padding: 20px;
+    }
+    
+    .circle {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: #98A4B4; 
+        margin: 0 10px; 
+    }
+    
+    .text-box {
+        margin-top: 10px; 
+        text-align: center;
+    }
+    
+    @media screen and (max-width: 600px) {
+        main {
+            flex-direction: column; 
+        }
+    }
+    
+    @media screen and (max-width: 600px) {
+        .gallery-item {
+            width: 150px; 
+            height: 150px; 
+        }
+    }
+    
+    @media screen and (max-width: 600px) {
+        body {
+            padding: 10px;
+        }
+    
+        header, nav, main, footer {
+            padding: 10px;
+        }
+    }
+    
+    footer {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .logo {
+        max-width: 50px;
+        max-height: 50px;
+        margin: 20px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+        z-index: 1; 
+    }
+    
+    @media only screen and (max-width: 600px) {
+        .logo {
+            max-width: 50px; 
+            max-height: 50px; 
+            margin: 5px; 
+        }
+    }
+</style>
+    
+</head>
 <body>
-    <div class="box">
-        <img src="i_p_logo_white.png" alt="Logo" class="logo" onclick="spinLogo()">
+    <header>
+
+        <div class="box">
+        <img src="white_logo.png" alt="Logo" class="logo" onclick="spinLogo()">
 
         <div class="navbar" id="navbar">
             <a href="index.html#Home">Home</a>
-            <a href="portfolio_about_me.html#AboutMe">About Me</a>
+            <a href="about_me.html#AboutMe">About Me</a>
             <a href="portfolio_projects.html#Projects">Projects</a>
             <a href="portfolio_contact.html#ContactMe">Contact</a>
-            <a href="portfolio_blog.html#Blog">Blog</a>
-            <a href="javascript:void(0);" class="hamburger" onclick="toggleMenu()">
-                <i class="fa fa-bars"></i>
-            </a>
+
+        </div>
+        <button class="hamburger-menu" id="hamburger-menu">&#9776;</button>
+        <div class="mobile-navbar" id="mobile-navbar">
+            <button id="mobile-navbar-close" class="close-btn">X</button>
+            <a href="index.html#Home">Home</a>
+            <a href="about_me.html#AboutMe">About Me</a>
+            <a href="projects.html#Projects">Projects</a>
+            <a href="contact.html#ContactMe">Contact</a>
+
+        </div>
+    </nav>
+    </header>    
+    
+    <main>
+        <div class="content">
+            <h1>Welcome,</h1>
+            <p>My name is Isabella Pelot, I am a graphic design student at North Idaho College in my first year. I am interested in all aspects of design and look forward to learning more in the future.</p>
+        </div>
+        <div class="gallery-container">
+            <img src="_MG_1591.jpeg" alt="Photo of Me" class="photo_me">
         </div>
 
-        <h1>Welcome,</h1>
+        <div class="gray-background"></div>
+    </main>
+    
+    <main class="new-section">
 
-        <p>My name is Isabella Pelot, I am a graphic design student at North Idaho College in my first year. I am interested in all aspects of design and look forward to learning more in the future.</p>
+    </main>     
+    
 
-        <div class="rounded-box">
-            <img src="Portfolio_Me.png" alt="Illustrator drawing of me." class="me">
-        </div>
-
-        <h4>Look around this site to:</h4>
-
-        <ul>
-            <li>Find out more about me.</li>
-            <li>See my work.</li>
-            <li>Get in contact with me.</li>
-        </ul>
-
-        <footer><small>Copyright© Isabella Pelot 2024</small></footer>
-    </div>
-
-    <script>
+    <footer>
+        Copyright© Isabella Pelot 2024
+    </footer>
+</div>
+<script>
         function spinLogo() {
             var logo = document.querySelector('.logo');
             logo.style.transition = 'transform 1s ease-in-out';
@@ -204,15 +358,17 @@
             }, 1000);
         }
 
-        function toggleMenu() {
-            var x = document.getElementById("navbar");
-            if (x.className === "navbar") {
-                x.className += " responsive";
-            } else {
-                x.className = "navbar";
-            }
-        }
-    </script>
-</body>
+    var hamburger = document.getElementById('hamburger-menu');
+    var closeBtn = document.getElementById('mobile-navbar-close');
 
+    hamburger.addEventListener("click", toggleMenu);
+    closeBtn.addEventListener("click", toggleMenu);
+
+    function toggleMenu() {
+        var navbar = document.getElementById('mobile-navbar');
+        navbar.classList.toggle('open');
+    }
+</script>
+
+</body>
 </html>
